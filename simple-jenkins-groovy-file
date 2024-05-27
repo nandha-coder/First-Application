@@ -54,5 +54,11 @@ pipeline {
 		}
             }
         }
+        stage('Docker Image Scan') {
+            steps {
+               sh " trivy image nandyuvi/9043:${BUILD_NUMBER} "
+            }
+        }
+
 	}
 }
